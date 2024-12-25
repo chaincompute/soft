@@ -1,2 +1,2 @@
-# soft
-Soft viewer for comics, manga, adult comics like h
+#v1
+pip install tensorflow celery redis
