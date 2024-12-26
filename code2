@@ -1,0 +1,18 @@
+use std::thread;
+
+fn perform_computation() {
+    //
+    println!("Performing heavy computation...");
+}
+
+fn main() {
+    let handles: Vec<_> = (0..4).map(|_| {
+        thread::spawn(|| {
+            perform_computation();
+        })
+    }).collect();
+
+    for handle in handles {
+        handle.join().unwrap();
+    }
+}
