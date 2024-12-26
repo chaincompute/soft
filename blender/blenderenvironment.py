@@ -2,13 +2,13 @@ from typing import Dict
 
 from apps.core import nvgpu
 from apps.core.nvgpu import get_devices
-from golem.docker.environment import DockerEnvironment
-from golem.docker.image import DockerImage
-from golem.environments.environment import SupportStatus, UnsupportReason
+from compute.docker.environment import DockerEnvironment
+from compute.docker.image import DockerImage
+from compute.environments.environment import SupportStatus, UnsupportReason
 
 
 class BlenderEnvironment(DockerEnvironment):
-    DOCKER_IMAGE = "golemfactory/blender"
+    DOCKER_IMAGE = "computefactory/blender"
     DOCKER_TAG = "1.13"
     ENV_ID = "BLENDER"
     SHORT_DESCRIPTION = "Blender (www.blender.org)"
@@ -16,7 +16,7 @@ class BlenderEnvironment(DockerEnvironment):
 
 class BlenderNVGPUEnvironment(BlenderEnvironment):
 
-    DOCKER_IMAGE = "golemfactory/blender_nvgpu"
+    DOCKER_IMAGE = "computefactory/blender_nvgpu"
     DOCKER_TAG = "1.7"
     ENV_ID = "BLENDER_NVGPU"
     SHORT_DESCRIPTION = "Blender + NVIDIA GPU (www.blender.org)"
